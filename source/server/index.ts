@@ -1,6 +1,8 @@
 import * as sourceMapSupport from "source-map-support";
 sourceMapSupport.install();
 
+require("dotenv").config();
+
 import * as path from "path";
 import * as http from "http";
 
@@ -13,7 +15,7 @@ import RelaisController from "./RelaisController";
 ////////////////////////////////////////////////////////////////////////////////
 // CONFIGURATION
 
-const port: number = parseInt(process.env["BATTERY_SERVER_PORT"]) || 8000;
+const port: number = parseInt(process.env["SERVER_PORT"]) || 8000;
 const devMode: boolean = process.env["NODE_ENV"] !== "production";
 
 const rootDir = path.resolve(__dirname, "..");
