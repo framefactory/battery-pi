@@ -1,0 +1,10 @@
+# FOLDERS
+.idea/
+.vscode/
+node_modules/
+bin/
+
+# FILES
+*.env
+*.log
+.DS_Store

@@ -1,0 +1,56 @@
+{
+    "name": "battery-pi",
+    "version": "0.1.0",
+    "description": "Battery Charging Manager",
+    "main": "index.js",
+    "scripts": {
+        "watch": "concurrently \"cd source/client && webpack --watch\" \"tsc -b source/server -w\" \"nodemon bin/index.js\"",
+        "watch-server": "concurrently \"tsc -b source/server -w\" \"nodemon bin/index.js\"",
+        "watch-client": "cd source/client && webpack --watch",
+        "build-server": "tsc -b source/server",
+        "build-client": "cd source/client && webpack && cd ../..",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "nodemonConfig": {
+        "delay": 1000,
+        "watch": [
+            "bin"
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/framefactory/battery-pi.git"
+    },
+    "contributors": [
+        {
+            "name": "Ralph Wiedemeier",
+            "url": "https://github.com/framefactory"
+        }
+    ],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/framefactory/battery-pi/issues"
+    },
+    "homepage": "https://github.com/framefactory/battery-pi#readme",
+    "dependencies": {
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "express-handlebars": "^3.1.0",
+        "morgan": "^1.9.1",
+        "nodemon": "^2.0.2",
+        "rpio": "^2.1.1"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.2",
+        "@types/node": "^13.5.0",
+        "awesome-typescript-loader": "^5.2.1",
+        "concurrently": "^5.1.0",
+        "css-loader": "^3.4.2",
+        "mini-css-extract-plugin": "^0.9.0",
+        "node-sass": "^4.13.1",
+        "source-map-loader": "^0.2.4",
+        "typescript": "^3.7.5",
+        "webpack": "^4.41.5",
+        "webpack-cli": "^3.3.10"
+    }
+}
