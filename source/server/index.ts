@@ -36,14 +36,15 @@ Template Directory:      ${templateDir}
 
 const controller = new RelaisController();
 
-// const exitHandler = () => {
-//     controller.shutdown();
-// };
-//
-// process.on("exit", exitHandler);
-// process.on("SIGINT", exitHandler);
-// process.on("SIGTERM", exitHandler);
-// process.on("uncaughtException", exitHandler);
+const exitHandler = () => {
+    controller.shutdown();
+    process.exit();
+};
+
+process.on("exit", exitHandler);
+process.on("SIGINT", exitHandler);
+process.on("SIGTERM", exitHandler);
+process.on("uncaughtException", exitHandler);
 
 const app = express();
 app.disable('x-powered-by');
